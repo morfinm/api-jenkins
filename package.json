@@ -4,8 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-  "test": "mocha --config=.mocharc.js"
-},
+    "env-dev": "cross-env NODE_ENV=dev",
+    "env-qa": "cross-env NODE_ENV=qa",
+    "env-uat": "cross-env NODE_ENV=uat",
+    "test:service": "mocha --config=.mocharc.js",
+    "test:dev": "npm run env-dev npm run test:service",
+    "test:qa": "npm run env-qa npm run test:service",
+    "test:uat": "npm run env-uat npm run test:service"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -14,5 +20,8 @@
     "mocha": "^10.0.0",
     "mochawesome": "^7.1.3",
     "supertest": "^6.2.4"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
   }
 }
