@@ -5,7 +5,7 @@ describe('trello tests',() =>{
     let boardName;
     let id;
 
-    it('1- GET - get all my boards', async() =>{
+    it.skip('1- GET - get all my boards', async() =>{
         const response=  await sendRequest(`members/me/boards`,'get');
         //console.log("response: ",response);
         console.log(JSON.stringify(response,null,3))
@@ -24,7 +24,7 @@ describe('trello tests',() =>{
 
     });
     //63375156d287440218f0f592
-    it('3- PUT - Update a board name', async() =>{
+    it.skip('3- PUT - Update a board name', async() =>{
         id='6335ea85eece5d021f7026c7'; //hardcoded id/ retreived form DB records usually
 
         let reponseBoard = await sendRequest(`members/me/boards`,'get'); //get boards
@@ -40,7 +40,7 @@ describe('trello tests',() =>{
         expect(response.status).to.be.equals(200);
 
     });
-    it('3- Delete - delete MyBoard2Updated', async() =>{
+    it.skip('3- Delete - delete MyBoard2Updated', async() =>{
         
         id='6335ea85eece5d021f7026c7'; //hardcoded id/ retreived form DB records usually
 
